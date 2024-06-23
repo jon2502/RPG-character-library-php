@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Index</title>
+<title>Downloads</title>
 </head>
 <body>
     <?php

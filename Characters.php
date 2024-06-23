@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Index</title>
+<title>Characters</title>
 </head>
 <body>
     <?php

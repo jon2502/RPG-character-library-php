@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Index</title>
+<title>Gallery</title>
 </head>
 <body>
     <?php
