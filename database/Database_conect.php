@@ -13,3 +13,18 @@ function open_connect(){
 function close_connect($connection){
     mysqlI_close($connection);
 }
+
+function GetAll(){
+    $connection = open_connect();
+    $query = mysqli_prepare($connection, "SELECT $collums FROM $table");
+    mysqli_stmt_execute($query);
+    $errorcheck = (mysqli_stmt_errno($query));
+    if($errorcheck){
+        echo "Error in query: $query. " . mysqli_stmt_error($query); 
+    } else {
+    $success = mysqli_stmt_get_result($query);
+    $content = mysqli_fetch_all($success);
+    }
+    close_connect($connection);
+    return $content;
+}
