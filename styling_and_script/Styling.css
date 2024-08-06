@@ -1,0 +1,17 @@
+
+.Libary{
+    display: grid;
+    margin-top: 2vh;
+    grid-template-columns: repeat(2, 50%);
+    row-gap: 2vh;
+    padding-left: 5%;
+  }
+
+  .Libary img{
+    width: 80%;
+  }
+  
+  .infoContainer{
+      display: grid;
+      grid-template-columns: repeat(2, 50%);
+  }

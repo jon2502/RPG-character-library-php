@@ -5,7 +5,6 @@
 <body>
     <?php
     require_once("./display_components/header.php");
-    require_once("./display_components/Character_list.php")
     ?>
 </body>
 </html>
