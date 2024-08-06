@@ -7,6 +7,7 @@
         ";
         echo $result;
     }
+
     function character_display($row){
         $display ="
         <div class= \"infoContainer\">
@@ -26,5 +27,12 @@
         </div>
         ";
         echo $display;
+    }
+
+    function system_list($row){
+        $Systems ="
+        <h3><a href=\"Systems.php?System=".htmlentities($row[1])."\">".htmlentities($row[1])."</a></h3>
+        ";
+        echo $Systems;
     }
     ?>
