@@ -39,8 +39,8 @@ function GetOne($table, $collums, $values, $index, $bind, $bindvalues){
         echo "Error in query: $query. " . mysqli_stmt_error($query); 
     } else {
     $success = mysqli_stmt_get_result($query);
-    $row = mysqli_fetch_all($success);
+    $content = mysqli_fetch_all($success);
     }
     close_connect($connection);
-    return $row;
+    return $content;
 }

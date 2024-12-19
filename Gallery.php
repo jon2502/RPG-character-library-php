@@ -12,7 +12,18 @@
         echo '<h2>Gallery</h2>';
 
         if($character != false){
-
+            $table = 'character_imgs';
+            $collums ='ID, IMG, Characters';
+            $result = GetAll($table, $collums);
+            if (sizeof($result) > 0) {
+                foreach ($result as $row) {
+                    $Characters = json_decode($row[2]);
+                    if(in_array($character, $Characters)){
+                        image_display($row);
+                    }
+                    
+                }
+            }
         }else{
             $table = 'character_imgs';
             $collums ='ID, IMG';
