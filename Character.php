@@ -11,7 +11,7 @@
     $table = 'characters';
     $collums ='ID, Name, IMG, Race, Culture_Background, Profession_Class, Subclass, Place_of_birth, System, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12, P13, P14, P15';
     $values = 'Name = ?';
-    $index ='charaterName';
+    $index ='characterName';
     $bind = 's';
     $bindvalues = $Name;
     $result = GetOne($table, $collums, $values, $index, $bind, $bindvalues);

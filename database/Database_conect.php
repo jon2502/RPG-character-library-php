@@ -32,6 +32,7 @@ function GetAll($table, $collums){
 function GetOne($table, $collums, $values, $index, $bind, $bindvalues){
     $connection = open_connect();
     $query = mysqli_prepare($connection, "SELECT $collums FROM $table USE INDEX($index) WHERE $values");
+    var_dump($query);
     mysqli_stmt_bind_param($query, $bind, $bindvalues);
     mysqli_stmt_execute($query);
     $errorcheck = (mysqli_stmt_errno($query));
