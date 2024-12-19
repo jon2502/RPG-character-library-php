@@ -25,8 +25,6 @@
         $index = 'characterSystem';
         $bind = 's';
         $bindvalues = $System;
-        var_dump($bindvalues);
-        var_dump($index);
         $result = GetOne($table, $collums, $values, $index, $bind, $bindvalues);
         var_dump($result);
         if (sizeof($result) > 0) {

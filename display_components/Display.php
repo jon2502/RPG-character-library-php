@@ -1,4 +1,3 @@
-
     <?php
 
     function character_link($row){
@@ -26,6 +25,11 @@
         <img src=".htmlentities($row[2])." :alt=".htmlentities($row[1]).">
         </div>
         ";
+        echo $display;
+    }
+
+    function image_display($row){
+        $display ="<img class=\"galleryIMG\" src=".htmlentities($row[1])." :alt=".htmlentities($row[0]).">";
         echo $display;
     }
 
