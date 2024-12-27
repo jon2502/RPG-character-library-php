@@ -18,7 +18,7 @@
         }
         echo '<section class="Libary">';
         foreach ($result as $row) {
-            character_display($row);
+            character_small_display($row);
         }
         echo '</section>';
     }

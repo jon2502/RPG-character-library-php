@@ -7,7 +7,7 @@
         echo $result;
     }
 
-    function character_display($row){
+    function character_small_display($row){
         $display ="
         <div class= \"infoContainer\">
         <div>
@@ -24,6 +24,37 @@
         </div>
         <img src=".htmlentities($row[2])." :alt=".htmlentities($row[1]).">
         </div>
+        ";
+        echo $display;
+    }
+
+    function character_display($row){
+        $display ="
+        <section id=\"Grid\">
+            <div>
+                <h1>".htmlentities($row[1])."</h1>";
+                for($i = 9; $i<24; $i++){
+                    if(isset($row[$i])){
+                        $display .= "
+                        <p>".htmlentities($row[$i])."</p>
+                        ";
+                    }
+                }
+            $display .= "
+            </div>
+            <div>
+                <img src=".htmlentities($row[2])." :alt=".htmlentities($row[1]).">
+            </div>
+        </section>
+        ";
+        echo $display;
+    }
+
+    function download_btns($row){
+        $display ="
+        <button class=\"btn-act\" data-name=\"".htmlentities($row[1])."\">
+        ".htmlentities($row[1])."
+        </button>
         ";
         echo $display;
     }

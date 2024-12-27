@@ -19,3 +19,14 @@
   .galleryIMG{
     width: 50%;
   }
+
+  #Grid{
+    display: grid;
+    padding-left: 4vw;
+    grid-template-columns: repeat(2, 50%);
+    place-items: center;
+}
+
+#Grid > div > img{
+  width: 90%;
+}

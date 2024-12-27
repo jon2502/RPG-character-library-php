@@ -1,6 +1,7 @@
 <html>
 <head>
-<title>Characters</title>
+<title>Character</title>
+<link rel="stylesheet" href="./styling_and_script/Styling.css">
 </head>
 <body>
     <?php
@@ -15,6 +16,11 @@
     $bind = 's';
     $bindvalues = $Name;
     $result = GetOne($table, $collums, $values, $index, $bind, $bindvalues);
+    if (sizeof($result) > 0) {
+        foreach ($result as $row) {
+            character_display($row);
+        }
+    }
     ?>
 </body>
 </html>

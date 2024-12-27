@@ -21,14 +21,12 @@
                     if(in_array($character, $Characters)){
                         image_display($row);
                     }
-                    
                 }
             }
         }else{
             $table = 'character_imgs';
             $collums ='ID, IMG';
             $result = GetAll($table, $collums);
-            var_dump($result);
             if (sizeof($result) > 0) {
                 foreach ($result as $row) {
                     image_display($row);
