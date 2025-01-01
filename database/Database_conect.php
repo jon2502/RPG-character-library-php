@@ -63,7 +63,7 @@ function GetFile($table, $collums, $values, $index, $bind, $bindvalues){
                 $fileContent = file_get_contents($row['link']);
                 if ($fileContent !== false) {
                     //set up header to send HTTP data
-                    header("Content-Type: application/pdf"); // set content type to pdf
+                    header("Content-Type: application/octet-stream"); // set content type to pdf
                     header("Content-Disposition: attachment; filename=\"" . basename($filePath) . "\"");
                     header('Content-Length: ' . strlen($fileContent)); // Use strlen for content length
                     echo $fileContent; // Output the file content

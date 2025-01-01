@@ -21,7 +21,7 @@
                         var link = document.createElement('a');
                         link.href = URL.createObjectURL(response);
                         console.log(link.href = URL.createObjectURL(response));
-                        link.download = fileName + ".pdf"; // Set the download file name
+                        link.download = fileName; // Set the download file name
                         link.click(); // Trigger the download
                     } else {
                         alert('Error: File content not received properly.');
