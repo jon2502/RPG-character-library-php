@@ -2,22 +2,38 @@
 <head>
 <title>Downloads</title>
 <link rel="stylesheet" href="./styling_and_script/Styling.css">
-<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script>
-    /*$(document).ready(function() {
+    $(document).ready(function() {
         $(".btn-act").on("click", function(e) {
             e.preventDefault();
             var fileName = $(this).data("name");
+            console.log(fileName)
             
             $.ajax({
-                url: url,
-                type: POST
-                data: data,
-                success: success,
-                dataType: dataType
+                url: "./database/download_function.php",
+                data: {fileName: fileName},
+                xhrFields: {responseType: 'blob' },
+                success: function(response) {
+                    console.log(response)
+                    if (response instanceof Blob) {
+                        // Create a download link for the file
+                        var link = document.createElement('a');
+                        link.href = URL.createObjectURL(response);
+                        console.log(link.href = URL.createObjectURL(response));
+                        link.download = fileName + ".pdf"; // Set the download file name
+                        link.click(); // Trigger the download
+                    } else {
+                        alert('Error: File content not received properly.');
+                    }
+     
+                },
+                error: function() {
+                    alert('Error in downloading the file.');
+                }  
             });
         })
-    })/
+    })
 </script>
 </head>
 <body>
