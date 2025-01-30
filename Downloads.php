@@ -20,7 +20,6 @@
                         // Create a download link for the file
                         var link = document.createElement('a');
                         link.href = URL.createObjectURL(response);
-                        console.log(link.href = URL.createObjectURL(response));
                         link.download = fileName; // Set the download file name
                         link.click(); // Trigger the download
                     } else {
